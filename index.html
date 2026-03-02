@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Workout Planner | Coach Nadim</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="header-row">
+            <h1>🏋️ Pro Planner</h1>
+            <button id="themeToggle" onclick="toggleTheme()" class="mini-btn">🌓</button>
+        </div>
+        
+        <div class="form-group">
+            <label>Age & Stats:</label>
+            <div class="stats-row">
+                <input type="number" id="age" placeholder="Age">
+                <input type="number" id="height" placeholder="Ht (cm)">
+                <input type="number" id="weight" placeholder="Wt (kg)">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Intensity Level:</label>
+            <select id="intensity">
+                <option value="Beginner">Beginner</option>
+                <option value="Advance">Advance</option>
+                <option value="Pro">Pro</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Goal / Type:</label>
+            <select id="goal">
+                <option value="bodybuilding">Bodybuilding</option>
+                <option value="weightloss">Weight Loss</option>
+                <option value="weightgain">Weight Gain</option>
+                <option value="musclegain">Muscle Gain</option>
+                <option value="powerlifting">Powerlifting</option>
+            </select>
+        </div>
+
+        <button onclick="generatePlan()">Generate My Plan ✨</button>
+        <button onclick="resetAll()" class="reset-btn">Reset All 🔄</button>
+
+        <div id="resultSection" class="result-box" style="display: none;">
+            <div id="bmiBadge"></div>
+            <h3>Your Personalized Plan:</h3>
+            <div id="planDetails"></div>
+        </div>
+
+        <div class="progress-section">
+            <h4>📈 Weight Tracker</h4>
+            <div class="stats-row">
+                <input type="number" id="dailyWeight" placeholder="Today's Wt">
+                <button onclick="saveProgress()" class="mini-btn">Save</button>
+            </div>
+            <ul id="weightLog"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
